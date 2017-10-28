@@ -133,6 +133,15 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'bot geliştirici') {
+		if (1) {
+			msg.channel.sendMessage('Beni Yapan Anar ve Umut elinize sağlık');
+		} else {
+		}
+	}
+});
+
+client.on('message', msg => {
   if (msg.content.toLowerCase() === 'Teşekkür Ederim') {
 		if (1) {
 			msg.channel.sendMessage('Bişey Değil ');
