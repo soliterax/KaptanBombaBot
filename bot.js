@@ -106,7 +106,7 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'güldür') {
+  if (msg.content.toLowerCase() === 'güldür' || msg.content.toLowerCase() === 'fıkra anlat') {
 		switch(Math.floor((Math.random() * 3) + 1)) {
 		case 1:
 			msg.channel.sendMessage('5. sınıftayım babam teşekkür getir bilgisayarını yenileyeceğim dedi, ben de getirdim, geldi f5’ e basıp gitti. O gün bu gündür başarıya küsüm.');
