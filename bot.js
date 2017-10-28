@@ -89,11 +89,20 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content.toLowerCase() === 'napıyon bot') {
-		if (1) {
+		switch(Math.floor((Math.random() * 3) + 1)) {
+		case 1:
 			msg.channel.sendMessage('İyiyim :smile: ya sen?  ^^');
-		} else {
+			break;
+		case 2:
+			msg.channel.sendMessage('İyilik, ya sen?');
+			break;
+		case 3:
+			msg.channel.sendMessage('eh işte takılıyouz...');
+			break;
+		default:
+			break;
 		}
-	}
+    }
 });
 
 client.on('message', msg => {
