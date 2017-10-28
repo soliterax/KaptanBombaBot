@@ -106,6 +106,24 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
+  if (msg.content.toLowerCase() === 'güldür') {
+		switch(Math.floor((Math.random() * 3) + 1)) {
+		case 1:
+			msg.channel.sendMessage('5. sınıftayım babam teşekkür getir bilgisayarını yenileyeceğim dedi, ben de getirdim, geldi f5’ e basıp gitti. O gün bu gündür başarıya küsüm.');
+			break;
+		case 2:
+			msg.channel.sendMessage('Hastanede filmimi çektiler, doktora “hangi kanalda oynayacak ?” diye sordum. Oksijen tüpüyle kovaladı :(');
+			break;
+		case 3:
+			msg.channel.sendMessage('Sen bɑnɑ bir ɑdım gel, ben sɑnɑ bir değil, iki değil, üç değil, tɑm dört kɑvɑnoz bɑl 100 TL.');
+			break;
+		default:
+			break;
+		}
+    }
+});
+
+client.on('message', msg => {
   if (msg.content.toLowerCase() === 'bende iyiyim teşekkür ederim') {
 		if (1) {
 			msg.channel.sendMessage('Allah İyilik Versin ');
