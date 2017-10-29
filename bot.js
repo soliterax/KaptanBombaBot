@@ -5,6 +5,7 @@ const chalk = require('chalk');
 const fs = require('fs');
 const moment = require('moment');
 require('./util/eventLoader')(client);
+require('./music')(client);
 
 var prefix = ayarlar.prefix;
 
