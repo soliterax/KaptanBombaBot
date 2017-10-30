@@ -13,11 +13,6 @@ const bot_controller = config.bot_controller;
 const prefix = config.prefix;
 const discord_token = config.discord_token;
 
-bot.on('ready', (ready) => {
-    console.log(`I am ${bot.user.username}, and I am ready to go.`);
-
-});
-
 bot.on('message', function (message) {
     const member = message.member;
     const msg = message.content.toLowerCase();
@@ -65,7 +60,6 @@ bot.on('message', function (message) {
             //}
             //} else {
             //    message.reply(' you already voted to skip you cheeky bastard.')
-
         }
 
     }
@@ -86,14 +80,17 @@ var queue = [];function skip_song(message){
 }
 
 function playMusic(id, message){
-    voiceChannel = message.member.voiceChannel;    voiceChannel.join().then(function (connection){
-        stream = ytdl("https://www.youtube.com/watch?v=" + id, {
-            filter: 'audioonly'
-
-        });
+    voiceChannel = message.member.voiceChannel;
+	voiceChannel.join().then(
+			function (connection){
+				stream = ytdl("https://www.youtube.com/watch?v=" + id, {
+				filter: 'audioonly'
+			}
+		);
 
         skipReq = 0;
-        skippers= [];        dispatcher = connection.playStream(stream);
+        skippers= [];
+		dispatcher = connection.playStream(stream);
         dispatcher.on('end', function() {
             skipReq = 0;
             skippers = [];
