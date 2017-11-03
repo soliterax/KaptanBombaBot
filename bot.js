@@ -64,6 +64,21 @@ client.load = command => {
   });
 };
 
+client.load = command => {
+  return new Promise((resolve, reject) => {
+    try {
+      let cmd = require(`./musicbot/${bot.py}`);
+      client.commands.set(command, cmd);
+      cmd.conf.aliases.forEach(alias => {
+        client.aliases.set(alias, cmd.help.name);
+      });
+      resolve();
+    } catch (e){
+      reject(e);
+    }
+  });
+};
+
 client.unload = command => {
   return new Promise((resolve, reject) => {
     try {
