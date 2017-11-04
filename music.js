@@ -144,7 +144,9 @@ function search_video(query, callback) {
     });
 	}
 
-
+function isYoutube(str) {
+    return str.indexOf("youtube.com") > -1;
+}
 
 
 bot.login(discord_token);
