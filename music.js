@@ -28,12 +28,12 @@ bot.on('message', function (message) {
     if(msg.startsWith(prefix + 'play')){
         if(member.voiceChannel || bot.guilds.get('322517098846748673').voiceConnection != null) {
         if(queue.length > 0 || isPlaying){
-            getID(args, function(id) {
+          	var id = getID(args);
                 add_to_queue(id);
                 fetchVideoInfo(id, function(videoInfo) {
                     if(err) throw new Error(err);
                     message.reply(' The song: **' + fetchVideoInfo.title + "** has been added to the queue list.");
-                });
+
             });
         } else {
             isPlaying = true;
@@ -137,12 +137,11 @@ function search_video(query, callback) {
     request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
         var json = JSON.parse(body);
         callback(json.items[0].id.videoID);
-
     });
-
 }
 
 function isYoutube(str) {
     return str.toLowerCase().indexOf("youtube.com") > -1;}
+
 
 bot.login(discord_token);
