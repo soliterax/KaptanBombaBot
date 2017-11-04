@@ -17,7 +17,7 @@ const discord_token = config.discord_token;
 bot.on('message', function (message) {
     var member = message.member;
     var msg = message.content.toLowerCase();
-    var args = message.content.split(' ').slice(1).join(" ");
+    var args = message.content.split(' ').slice(1).join(" ").toString();
 
     var queue = [];
     var isPlaying = false;
