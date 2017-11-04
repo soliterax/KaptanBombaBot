@@ -140,19 +140,10 @@ function add_to_queue(strID) {
 }
 
 function search_video(query, callback) {
-<<<<<<< HEAD
-	  request("https:\\www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
-			  var j = JSON.parse(body);
-				callback(j.items[0].id.videoID);
-
-		});
-=======
-    request("https://www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
-        var json = JSON.parse(body);
-        callback(json.items[0].id.videoID);
-    });
->>>>>>> parent of 478db00... Update music.js
-}
+-    request("https:\\www.googleapis.com/youtube/v3/search?part=id&type=video&q=" + encodeURIComponent(query) + "&key=" + yt_api_key, function(error, response, body) {
+ -        var json = JSON.parse(body);
+ -        callback(json.items[0].id.videoID);
+ -    });
 
 function isYoutube(str) {
     return str.toLowerCase().indexOf("youtube.com") > -1;}
