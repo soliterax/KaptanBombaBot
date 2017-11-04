@@ -15,9 +15,9 @@ const prefix = config.prefix;
 const discord_token = config.discord_token;
 
 bot.on('message', function (message) {
-    const member = message.member;
-    const msg = message.content.toLowerCase();
-    const args = message.content.split(' ').slice(1).join(" ");
+    var member = message.member;
+    var msg = message.content.toLowerCase();
+    var args = message.content.split(' ').slice(1).join(" ");
 
     var queue = [];
     var isPlaying = false;
@@ -27,7 +27,6 @@ bot.on('message', function (message) {
     var skippers = [];
 
     if(msg.startsWith(prefix + 'play')){
-	    const args = message.content.split(' ').slice(1).join(" ");
         if(member.voiceChannel || bot.guilds.get('322517098846748673').voiceConnection != null) {
         if(queue.length > 0 || isPlaying){
           	var id = getID(args);
@@ -35,7 +34,6 @@ bot.on('message', function (message) {
                 fetchVideoInfo(id, function(videoInfo) {
                     if(err) throw new Error(err);
                     message.reply(' The song: **' + fetchVideoInfo.title + "** has been added to the queue list.");
-
             });
         } else {
             	isPlaying = true;
