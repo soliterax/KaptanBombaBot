@@ -40,11 +40,12 @@ bot.on('message', function (message) {
             });
         } else {
             isPlaying = true;
-            getID(args, function(id){
-                queue.push("placeholder");
+
+		    var id = getID(args);
+                add_to_queue(id);
                 playMusic(id, message);
                     message.reply(' your song(s) has been added to the queue.');
-            });
+
         }
         } else {
             message.reply('You must be in a voice channel!');
