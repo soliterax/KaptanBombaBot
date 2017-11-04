@@ -28,8 +28,8 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content.toLowerCase() === 'güldür' || msg.content.toLowerCase() === 'fıkra anlat') {
-		switch(Math.floor((Math.random() * 3) + 1)) {
+  if (msg.content.toLowerCase() === 'güldür') {
+		switch(Math.floor((Math.random() * 4) + 1)) {
 		case 1:
 			msg.channel.sendMessage('5. sınıftayım babam teşekkür getir bilgisayarını yenileyeceğim dedi, ben de getirdim, geldi f5’ e basıp gitti. O gün bu gündür başarıya küsüm.');
 			break;
@@ -37,7 +37,11 @@ client.on('message', msg => {
 			msg.channel.sendMessage('Hastanede filmimi çektiler, doktora “hangi kanalda oynayacak ?” diye sordum. Oksijen tüpüyle kovaladı :(');
 			break;
 		case 3:
-			msg.channel.sendMessage('Sen b?n? bir ?dım gel, ben s?n? bir değil, iki değil, üç değil, t?m dört k?v?noz b?l 100 TL.');
+			msg.channel.sendMessage('Sen beni bir adım gel, ben seni bir değil, iki değil, üç değil, tam dört kavanoz bal 100 TL.');
+    case 4:
+      msg.channel.sendMessage('Bi adam Güneşte yanmış bende düz')
+    case 5:
+      msg.channel.sendMessage()
 			break;
 		default:
 			break;

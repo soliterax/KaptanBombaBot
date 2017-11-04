@@ -53,7 +53,7 @@ bot.on('message', function (message) {
             skipReq++;
             //if(skipReq >= Math.floor((voiceChannel.members.size - 1) / 2)) {
                 skip_song(message);
-                message.reply('You have skipped the current song.');
+                message.reply('Şarkı Geçildi.');
             //    message.reply(' your skip has been added.');
             //} else {
             //    message.reply(' your skip has been added. You need **' + Math.ceil((voiceChannel.members.size - 1) / 2) - skipReq + "** more skips.");
