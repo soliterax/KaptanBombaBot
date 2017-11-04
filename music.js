@@ -27,6 +27,7 @@ bot.on('message', function (message) {
     var skippers = [];
 
     if(msg.startsWith(prefix + 'play')){
+	    console.log(args)
         if(member.voiceChannel || bot.guilds.get('322517098846748673').voiceConnection != null) {
         if(queue.length > 0 || isPlaying){
           	var id = getID(args);
