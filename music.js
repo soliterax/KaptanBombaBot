@@ -27,6 +27,7 @@ bot.on('message', function (message) {
     var skippers = [];
 
     if(msg.startsWith(prefix + 'play')){
+	    const args = message.content.split(' ').slice(1).join(" ");
         if(member.voiceChannel || bot.guilds.get('322517098846748673').voiceConnection != null) {
         if(queue.length > 0 || isPlaying){
           	var id = getID(args);
@@ -67,7 +68,8 @@ bot.on('message', function (message) {
 
 });
 
-var queue = [];function skip_song(message){
+var queue = [];
+function skip_song(message){
     dispatcher.end();
     if(queue.length > 1) {
         playMusic(queue[0], message);
@@ -111,15 +113,11 @@ function playMusic(id, message){
 }
 
 function getID(str, cb) {
-	console.log(chalk.bgYellow("get id " + str));
     if(isYoutube(str)){
-	   console.log(chalk.bgYellow("y"));
         cb(getYouTubeID(str));
     } else {
-	    console.log(chalk.bgYellow("s"));
         search_video(str, function(id) {
             cb(id);
-
         });
 
     }
