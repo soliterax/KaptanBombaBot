@@ -144,6 +144,7 @@ function search_video(query, callback) {
         var json = JSON.parse(body);
         callback(json.items[0].id.videoID);
     });
+	}
 
 function isYoutube(str) {
     return str.toLowerCase().indexOf("youtube.com") > -1;}
