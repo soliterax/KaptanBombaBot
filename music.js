@@ -28,7 +28,9 @@ bot.on('message', function (message) {
     if(msg.startsWith(prefix + 'play')){
         if(member.voiceChannel || bot.guilds.get('322517098846748673').voiceConnection != null) {
         if(queue.length > 0 || isPlaying){
+		console.log(chalk.bgYellow("play bef. " + id));
           	var id = getID(args);
+		console.log(chalk.bgYellow("play af. " + id));
                 add_to_queue(id);
                 fetchVideoInfo(id, function(videoInfo) {
                     if(err) throw new Error(err);
@@ -111,9 +113,12 @@ function playMusic(id, message){
 }
 
 function getID(str, cb) {
+	console.log(chalk.bgYellow("get id " + str));
     if(isYoutube(str)){
+	   console.log(chalk.bgYellow("y"));
         cb(getYouTubeID(str));
     } else {
+	    console.log(chalk.bgYellow("s"));
         search_video(str, function(id) {
             cb(id);
 
