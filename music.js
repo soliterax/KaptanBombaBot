@@ -29,7 +29,7 @@ bot.on('message', function (message) {
     if(msg.startsWith(prefix + 'play')){
         if(member.voiceChannel || bot.guilds.get('322517098846748673').voiceConnection != null) {
         if(queue.length > 0 || isPlaying){
-          	var id = getID(args);
+				var id = getID(args);
                 add_to_queue(id);
                 fetchVideoInfo(id, function(videoInfo) {
                     if(err) throw new Error(err);
@@ -130,7 +130,7 @@ function search_video(query) {
 	}
 
 function isYoutube(str) {
-    return str.indexOf("youtube.com") > -1;
+    return false//str.indexOf("youtube.com") > -1;
 }
 
 
