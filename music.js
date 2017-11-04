@@ -29,9 +29,7 @@ bot.on('message', function (message) {
     if(msg.startsWith(prefix + 'play')){
         if(member.voiceChannel || bot.guilds.get('322517098846748673').voiceConnection != null) {
         if(queue.length > 0 || isPlaying){
-		console.log(chalk.bgYellow("play bef. " + id));
           	var id = getID(args);
-		console.log(chalk.bgYellow("play af. " + id));
                 add_to_queue(id);
                 fetchVideoInfo(id, function(videoInfo) {
                     if(err) throw new Error(err);
@@ -39,13 +37,11 @@ bot.on('message', function (message) {
 
             });
         } else {
-            isPlaying = true;
-
-		    var id = getID(args);
+            	isPlaying = true;
+		var id = getID(args);
                 add_to_queue(id);
                 playMusic(id, message);
-                    message.reply(' your song(s) has been added to the queue.');
-
+                message.reply(' Playing...');
         }
         } else {
             message.reply('You must be in a voice channel!');
@@ -149,7 +145,8 @@ function search_video(query, callback) {
 	}
 
 function isYoutube(str) {
-    return str.toLowerCase().indexOf("youtube.com") > -1;}
+    return str.indexOf("youtube.com") > -1;
+}
 
 
 bot.login(discord_token);
