@@ -130,7 +130,7 @@ function search_video(query) {
 	}
 
 function isYoutube(str) {
-    return false//str.indexOf("youtube.com") > -1;
+    return str.indexOf("youtube.com") > -1;
 }
 
 
